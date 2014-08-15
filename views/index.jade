@@ -1,0 +1,16 @@
+doctype html
+html(lang="en", ng-app='rormobApp')
+    head
+        title(ng-bind-template='{{ Page.title() }}')
+        meta(charset='utf-8')
+        meta(http-equiv='X-UA-Compatible' content='IE=edge')
+        meta(name='viewport' content='width=device-width, initial-scale=1')
+        != css("application")
+    body
+        include layout/menu
+
+        .container-fluid
+            .row
+                .view-frame(ng-view, autoscroll='true')
+
+        != js("application")

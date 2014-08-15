@@ -1,0 +1,389 @@
+/** Primary colors **/
+
+@yellow: #f6e300;
+@cyan: #57c1e6;
+@grey: #3f4040;
+@black: #444;
+@purple: #e200f4;
+
+/******************************************************************************************/
+/** General styling and specific alignments **/
+/******************************************************************************************/
+
+// Text
+
+p {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 30px;
+}
+
+li, .carousel-content.text-center p {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 22px;
+}
+
+.lead {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 52px;
+  line-height: 43px;
+}
+
+.lead-bold {
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 52px;
+  font-weight: bold;
+  line-height: 43px;
+}
+
+// Hr
+
+hr {
+  border: none;
+  height: 2px;
+  color: #333; // Old IE
+  background-color: #333; // Modern browsers
+}
+
+/* Navbar */
+
+// Blue line under navbar
+.navbar {
+  border-bottom-width: 2px;
+  border-bottom-color: #57c1e6;
+}
+
+// Blue line under navbar on responsive collapsed view
+.navbar-default .navbar-collapse, .navbar-default .navbar-form {
+  border-top-width: 2px;
+  border-top-color: #57c1e6;
+}
+
+// Make space for the heading
+body > .container-fluid {
+  padding-top: 40px;
+}
+
+/******************************************************************************************/
+/** Sections used to split content **/
+/******************************************************************************************/
+
+.section {
+  padding: 80px 20px 80px 20px;
+}
+
+.section-purple {
+  .section;
+
+  background-color: @purple;
+  color: #fff;
+}
+
+.section-white {
+  .section;
+
+  color: @grey;
+}
+
+.section-yellow {
+  .section;
+
+  background-color: @yellow;
+}
+
+.section-cyan {
+  .section;
+
+  background-color: @cyan;
+  color: #fff;
+}
+
+.section-grey {
+  .section;
+
+  background-color: @grey;
+  color: #ccc;
+}
+
+/******************************************************************************************/
+/** Navigation animation **/
+/******************************************************************************************/
+
+.view-container {
+  position: relative;
+}
+
+.view-frame.ng-enter, .view-frame.ng-leave {
+  background: white;
+  position: absolute;
+  top: 40;
+  left: 0;
+  right: 0;
+}
+
+.view-frame.ng-enter {
+  -webkit-animation: 0.4s fade-in;
+  -moz-animation: 0.4s fade-in;
+  -o-animation: 0.4s fade-in;
+  animation: 0.4s fade-in;
+  z-index: 100;
+}
+
+.view-frame.ng-leave {
+  -webkit-animation: 0.4s fade-out;
+  -moz-animation: 0.4s fade-out;
+  -o-animation: 0.4s fade-out;
+  animation: 0.4s fade-out;
+  z-index:99;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-moz-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@-webkit-keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-moz-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+@-webkit-keyframes fade-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/******************************************************************************************/
+/** Carousel **/
+/******************************************************************************************/
+
+#carousel {
+  background-color: @cyan;
+  padding-top: 35px;
+  padding-bottom: 35px;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+
+.carousel-control.right, .carousel-control.left {
+  background-image: none;
+}
+
+.carousel-content {
+  padding-top: 0px;
+  padding-left: 50px;
+  padding-right: 40px;
+  padding-bottom: 0px;
+  height: 260px;
+  color: #fff;
+}
+
+.carousel-caption {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.carousel-caption h1 {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+/******************************************************************************************/
+/** Epoch real-time chart **/
+/******************************************************************************************/
+
+@series1color: @grey;
+@series2color: @cyan;
+
+// Text below a tick
+.epoch .axis .tick text {
+  font-size: 16px;
+}
+
+// Line of an axis
+.epoch .axis path, .epoch .axis line {
+  stroke: @cyan;
+  stroke-width: 2px;
+}
+
+// Category/series 1 styling
+.rormob div.ref.category1 {
+  background-color: @series1color;
+}
+
+.rormob .category1 .line {
+  stroke: @series1color;
+}
+
+.rormob .category1 .area, .rormob .category1 .dot {
+  fill: @series1color;
+  stroke: rgba(0, 0, 0, 0);
+}
+
+.rormob .arc.category1 path {
+  fill: @series1color;
+}
+
+.rormob .bar.category1 {
+  fill: @series1color;
+}
+
+// Category/series 2 styling
+
+.rormob div.ref.category2 {
+  background-color: @series2color;
+}
+
+.rormob .category2 .line {
+  stroke: @series2color;
+}
+
+.rormob .category2 .area, .rormob .category2 .dot {
+  fill: @series2color;
+  stroke: rgba(0, 0, 0, 0);
+}
+
+.rormob .arc.category2 path {
+  fill: @series2color;
+}
+
+.epoch.rormob .bar.category2 {
+  fill: @series2color;
+}
+
+
+
+/******************************************************************************************/
+/** Dashes by position and size **/
+/******************************************************************************************/
+
+@dashes-big: 10px;
+@dashes-small: 3px;
+
+.dashes-top-big {
+  border-top-style: dashed;
+  border-top-width: @dashes-big;
+}
+
+.dashes-top-small {
+  border-top-style: dashed;
+  border-top-width: @dashes-small;
+}
+
+.dashes-bottom-big {
+  border-bottom-style: dashed;
+  border-bottom-width: @dashes-big;
+}
+
+.dashes-bottom-small {
+  border-bottom-style: dashed;
+  border-bottom-width: @dashes-small;
+}
+
+/** Dashes colors **/
+
+.dashes-top-cyan {
+  border-top-color: @cyan;
+}
+
+.dashes-bottom-cyan {
+  border-bottom-color: @cyan;
+}
+
+.dashes-top-grey {
+  border-top-color: @grey;
+}
+
+.dashes-bottom-grey {
+  border-bottom-color: @grey;
+}
+
+.dashes-top-yellow {
+  border-top-color: @yellow;
+}
+
+.dashes-bottom-yellow {
+  border-bottom-color: @yellow;
+}
+
+
+
+/******************************************************************************************/
+/** Headroom slide effect **/
+/******************************************************************************************/
+
+
+.headroom--pinned {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+.headroom--unpinned {
+  -webkit-transform: translateY(-100%);
+  -ms-transform: translateY(-100%);
+  transform: translateY(-100%);
+  -webkit-transition: all .25s ease-in-out;
+  -moz-transition: all .25s ease-in-out;
+  -o-transition: all .25s ease-in-out;
+  transition: all .25s ease-in-out;
+}
+
+
+/******************************************************************************************/
+/** Sticky footer extract **/
+/******************************************************************************************/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+body {
+  /* Margin bottom by footer height */
+  margin-bottom: 40px;
+}
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 40px;
+  background-color: #f5f5f5;
+
+  border-top-style: double;
+  border-top-width: 3px;
+  border-top-color: @cyan;
+}
+
+body > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+code {
+  font-size: 80%;
+}

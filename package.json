@@ -1,0 +1,25 @@
+{
+  "name": "pm2web",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "byword": "^0.1.1",
+    "compression": "^1.0.11",
+    "connect-assets": "^4.3.0",
+    "express": "^4.8.4",
+    "jade": "^1.5.0",
+    "less": "^1.7.4",
+    "log4js": "^0.6.16",
+    "pm2": "^0.9.6",
+    "request": "^2.40.0",
+    "serve-favicon": "^2.0.1",
+    "socket.io": "^1.0.6",
+    "underscore": "^1.6.0"
+  }
+}

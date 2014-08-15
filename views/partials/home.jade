@@ -1,0 +1,21 @@
+.col-xs-12
+    .row.section-grey
+        .col-md-offset-3.col-md-6
+            h3.lead-bold(style='color: #fff') PM2 Web
+
+    .row.section
+        .col-md-offset-3.col-md-6
+            ul.list-group
+                li.list-group-item(ng-repeat='process in processes',
+                    ng-class='getStatusClass(process.pm2_env.status)',
+                    ng-click='getProcessDetail(process.name)') {{ process.name }} - {{ process.pid }}
+                    .pull-right
+                        .btn-group
+                            button(type='button', ng-disabled='process.pm2_env.status == "online"',
+                                ng-click='startProcess(process.pid)').btn.btn-default Start
+
+                            button(type='button', ng-disabled='process.pm2_env.status == "stopped"',
+                                ng-click='stopProcess(process.pid)').btn.btn-default Stop
+
+                            button(type='button', ng-disabled='process.pm2_env.status == "stopped"',
+                                ng-click='restartProcess(process.pid)').btn.btn-default Restart
